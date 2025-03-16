@@ -14,8 +14,10 @@ export async function fetchMemes(after?: string): Promise<{
   memes: RedditMeme[];
   nextPage: string | null;
 }> {
-  const subreddits = ['memes', 'dankmemes', 'wholesomememes'];
-  const url = `https://www.reddit.com/r/${subreddits.join('+')}/hot.json?limit=25${after ? `&after=${after}` : ''}`;
+  // const subreddits = ['memes', 'dankmemes', 'wholesomememes'];
+  // const url = `https://www.reddit.com/r/${subreddits.join('+')}/hot.json?limit=25${after ? `&after=${after}` : ''}`;
+  const url = `https://www.reddit.com/r/memes/hot.json?limit=25${after ? `&after=${after}` : ''}`;
+
 
   try {
     const response = await fetch(url);
